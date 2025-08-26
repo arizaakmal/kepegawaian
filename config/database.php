@@ -1,5 +1,5 @@
 <?php
-// Konfigurasi koneksi database MySQL
+
 $host = 'localhost';
 $user = 'root';
 $pass = '';

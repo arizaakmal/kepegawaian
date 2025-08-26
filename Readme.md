@@ -22,9 +22,9 @@ cd kepegawaian
 
 1. Buka **phpMyAdmin** di `http://localhost/phpmyadmin`
 2. Import file `database.sql`:
-   - Klik tab **"SQL"**
-   - Copy isi file `database.sql` dan paste
-   - Klik **"Go"** atau **"Kirim"**
+   - Klik tab **"Import"**
+   - Klik **"Choose File"** dan pilih file `database.sql`
+   - Klik **"Go"** atau **"Import"**
 
 ### 3. Konfigurasi Database
 

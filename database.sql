@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS kontrak (
     id_pegawai INT,
     tgl_mulai DATE,
     tgl_selesai DATE,
+    tipe_kontrak ENUM('Tetap','Kontrak','Magang','Freelance') DEFAULT 'Kontrak',
     status ENUM('Aktif','Nonaktif') DEFAULT 'Aktif',
     FOREIGN KEY (id_pegawai) REFERENCES pegawai(id_pegawai)
 );
@@ -45,12 +46,12 @@ INSERT INTO pegawai (nama, alamat, tgl_lahir, id_jabatan) VALUES
 ('Gunawan Wijaya', 'Jl. Pahlawan No. 12, Medan', '1987-04-18', 2),
 ('Hesti Purnamasari', 'Jl. Pemuda No. 20, Denpasar', '1993-01-30', 4);
 
-INSERT INTO kontrak (id_pegawai, tgl_mulai, tgl_selesai, status) VALUES 
-(1, '2023-01-15', '2025-01-14', 'Aktif'),
-(2, '2022-06-01', '2024-05-31', 'Aktif'),
-(3, '2023-03-10', '2025-03-09', 'Aktif'),
-(4, '2021-09-01', '2023-08-31', 'Nonaktif'),
-(5, '2023-07-15', '2025-07-14', 'Aktif'),
-(6, '2022-11-20', '2024-11-19', 'Aktif'),
-(7, '2023-02-05', '2025-02-04', 'Aktif'),
-(8, '2022-08-12', '2024-08-11', 'Aktif');
+INSERT INTO kontrak (id_pegawai, tgl_mulai, tgl_selesai, tipe_kontrak, status) VALUES 
+(1, '2023-01-15', '2025-01-14', 'Tetap', 'Aktif'),
+(2, '2022-06-01', '2024-05-31', 'Kontrak', 'Aktif'),
+(3, '2023-03-10', '2025-03-09', 'Kontrak', 'Aktif'),
+(4, '2021-09-01', '2023-08-31', 'Kontrak', 'Nonaktif'),
+(5, '2023-07-15', '2025-07-14', 'Tetap', 'Aktif'),
+(6, '2022-11-20', '2024-11-19', 'Magang', 'Aktif'),
+(7, '2023-02-05', '2025-02-04', 'Freelance', 'Aktif'),
+(8, '2022-08-12', '2024-08-11', 'Kontrak', 'Aktif');
