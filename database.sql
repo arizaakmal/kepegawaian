@@ -4,22 +4,22 @@
 CREATE DATABASE IF NOT EXISTS kepegawaian;
 USE kepegawaian;
 
-CREATE TABLE jabatan (
-    id_jabatan INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS jabatan (
+    id INT AUTO_INCREMENT PRIMARY KEY,
     nama_jabatan VARCHAR(100) NOT NULL,
-    gaji_pokok BIGINT NOT NULL
+    gaji BIGINT NOT NULL
 );
 
-CREATE TABLE pegawai (
+CREATE TABLE IF NOT EXISTS pegawai (
     id_pegawai INT AUTO_INCREMENT PRIMARY KEY,
     nama VARCHAR(100) NOT NULL,
     alamat TEXT,
     tgl_lahir DATE,
     id_jabatan INT,
-    FOREIGN KEY (id_jabatan) REFERENCES jabatan(id_jabatan)
+    FOREIGN KEY (id_jabatan) REFERENCES jabatan(id)
 );
 
-CREATE TABLE kontrak (
+CREATE TABLE IF NOT EXISTS kontrak (
     id_kontrak INT AUTO_INCREMENT PRIMARY KEY,
     id_pegawai INT,
     tgl_mulai DATE,
@@ -29,7 +29,7 @@ CREATE TABLE kontrak (
 );
 
 -- Insert sample data
-INSERT INTO jabatan (nama_jabatan, gaji_pokok) VALUES 
+INSERT INTO jabatan (nama_jabatan, gaji) VALUES 
 ('Manager', 8000000),
 ('Supervisor', 6000000),
 ('Staff', 4000000),
