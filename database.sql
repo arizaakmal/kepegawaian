@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS jabatan (
 );
 
 CREATE TABLE IF NOT EXISTS pegawai (
-    id_pegawai INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     nama VARCHAR(100) NOT NULL,
     alamat TEXT,
     tgl_lahir DATE,
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS kontrak (
     tgl_selesai DATE,
     tipe_kontrak ENUM('Tetap','Kontrak','Magang','Freelance') DEFAULT 'Kontrak',
     status ENUM('Aktif','Nonaktif') DEFAULT 'Aktif',
-    FOREIGN KEY (id_pegawai) REFERENCES pegawai(id_pegawai)
+    FOREIGN KEY (id_pegawai) REFERENCES pegawai(id)
 );
 
 -- Insert sample data

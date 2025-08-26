@@ -16,7 +16,6 @@
                 <h1 class="display-4 mb-5 text-dark">Selamat datang di aplikasi kepegawaian!</h1>
                 <p class="lead mb-5 text-muted">Sistem manajemen data kepegawaian yang mudah dan efisien</p>
 
-                <!-- Menu -->
                 <div class="row g-4 mt-4">
                     <div class="col-md-4">
                         <div class="card bg-primary text-white h-100">
